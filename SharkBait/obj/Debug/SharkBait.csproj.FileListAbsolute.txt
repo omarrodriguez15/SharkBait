@@ -1,9 +1,10 @@
 D:\Data\Desktop\SharkBait\SharkBait\bin\Debug\SharkBait.exe.config
 D:\Data\Desktop\SharkBait\SharkBait\bin\Debug\SharkBait.exe
 D:\Data\Desktop\SharkBait\SharkBait\bin\Debug\SharkBait.pdb
-D:\Data\Desktop\SharkBait\SharkBait\obj\Debug\SharkBait.csprojResolveAssemblyReference.cache
 D:\Data\Desktop\SharkBait\SharkBait\obj\Debug\SharkBait.frmConfiguration.resources
+D:\Data\Desktop\SharkBait\SharkBait\obj\Debug\SharkBait.frmOutPut.resources
 D:\Data\Desktop\SharkBait\SharkBait\obj\Debug\SharkBait.Properties.Resources.resources
+D:\Data\Desktop\SharkBait\SharkBait\obj\Debug\SharkBait.ucString.resources
 D:\Data\Desktop\SharkBait\SharkBait\obj\Debug\SharkBait.csproj.GenerateResource.Cache
 D:\Data\Desktop\SharkBait\SharkBait\obj\Debug\SharkBait.exe
 D:\Data\Desktop\SharkBait\SharkBait\obj\Debug\SharkBait.pdb

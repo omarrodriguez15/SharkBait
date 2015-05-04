@@ -8,17 +8,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace SharkBait
 {
     public partial class frmConfiguration : Form
     {
+        private Configuration config;
+        public System.IO.StreamReader _stream { get; private set; } 
+
         public frmConfiguration()
         {
             InitializeComponent();
 
             //check boxes that were checked last time
-            Configuration config = ConfigurationManager.OpenExeConfiguration(Application.ExecutablePath);
+            config = ConfigurationManager.OpenExeConfiguration(Application.ExecutablePath);
             cbStrings.Checked = config.AppSettings.Settings["Strings"].Value.ToString() == "True" ? true : false;
             cbListDlls.Checked = config.AppSettings.Settings["List Dlls"].Value.ToString() == "True" ? true : false;
             cbProcMon.Checked = config.AppSettings.Settings["ProcMon"].Value.ToString() == "True" ? true : false;
@@ -27,15 +31,13 @@ namespace SharkBait
 
         private void btnChooseFile_Click(object sender, EventArgs e)
         {
-            Configuration config;
             ofd.Title = "Open Binary File";
             ofd.Filter = "EXE Files|*.exe|ELF|*.ELF|AllFiles|*.*";
             if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-
                 lblFileName.Text = ofd.SafeFileName.ToString();
-                config = ConfigurationManager.OpenExeConfiguration(Application.ExecutablePath);
-                config.AppSettings.Settings["FileName"].Value = ofd.SafeFileName.ToString();
+                config.AppSettings.Settings["FileName"].Value = ofd.SafeFileName;
+                config.AppSettings.Settings["FilePath"].Value = ofd.FileName;
                 config.Save(ConfigurationSaveMode.Minimal);
             }
         }
@@ -44,10 +46,29 @@ namespace SharkBait
         {
             var cbObj = (CheckBox)sender;
             //Save Checked box condiguration to App.config
-            Configuration config = ConfigurationManager.OpenExeConfiguration(Application.ExecutablePath);
             config.AppSettings.Settings[cbObj.Text].Value = cbObj.Checked.ToString();
             config.Save(ConfigurationSaveMode.Minimal);
 
+        }
+
+        private void btnGo_Click(object sender, EventArgs e)
+        {
+            //Execute Program
+            ProcessStartInfo startInfo = new ProcessStartInfo();
+            startInfo.FileName = "strings.exe";
+            startInfo.Arguments = "\""+config.AppSettings.Settings["FilePath"].Value+"\"";
+            startInfo.UseShellExecute = false;
+            startInfo.RedirectStandardOutput = true;
+           
+            //Get the output stream
+            Process proc = Process.Start(startInfo);
+            _stream = proc.StandardOutput;
+            
+            //Show Ouput in our own form
+            this.Hide();
+            frmOutPut fop = new frmOutPut(this);
+            fop.ShowDialog();
+            this.Show();
         }
     }
 }
