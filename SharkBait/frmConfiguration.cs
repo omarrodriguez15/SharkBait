@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.IO;
 
 namespace SharkBait
 {
@@ -21,12 +22,24 @@ namespace SharkBait
         {
             InitializeComponent();
 
-            //check boxes that were checked last time
-            config = ConfigurationManager.OpenExeConfiguration(Application.ExecutablePath);
-            cbStrings.Checked = config.AppSettings.Settings["Strings"].Value.ToString() == "True" ? true : false;
-            cbListDlls.Checked = config.AppSettings.Settings["List Dlls"].Value.ToString() == "True" ? true : false;
-            cbProcMon.Checked = config.AppSettings.Settings["ProcMon"].Value.ToString() == "True" ? true : false;
-            cbProcExp.Checked = config.AppSettings.Settings["ProcExp"].Value.ToString() == "True" ? true : false;
+            try
+            {
+                //check boxes that were checked last time
+                config = ConfigurationManager.OpenExeConfiguration(Application.ExecutablePath);
+                cbStrings.Checked = config.AppSettings.Settings["Strings"].Value.ToString() == "True" ? true : false;
+                cbListDlls.Checked = config.AppSettings.Settings["List Dlls"].Value.ToString() == "True" ? true : false;
+                cbProcMon.Checked = config.AppSettings.Settings["ProcMon"].Value.ToString() == "True" ? true : false;
+                cbProcExp.Checked = config.AppSettings.Settings["ProcExp"].Value.ToString() == "True" ? true : false;
+
+                if (File.Exists(config.AppSettings.Settings["FilePath"].Value))
+                {
+                    lblFileName.Text = config.AppSettings.Settings["FileName"].Value.ToString();
+                }
+            }
+            catch (Exception ei)
+            {
+                MessageBox.Show(ei.Message);
+            }
         }
 
         private void btnChooseFile_Click(object sender, EventArgs e)
@@ -53,22 +66,20 @@ namespace SharkBait
 
         private void btnGo_Click(object sender, EventArgs e)
         {
-            //Execute Program
-            ProcessStartInfo startInfo = new ProcessStartInfo();
-            startInfo.FileName = "strings.exe";
-            startInfo.Arguments = "\""+config.AppSettings.Settings["FilePath"].Value+"\"";
-            startInfo.UseShellExecute = false;
-            startInfo.RedirectStandardOutput = true;
-           
-            //Get the output stream
-            Process proc = Process.Start(startInfo);
-            _stream = proc.StandardOutput;
-            
-            //Show Ouput in our own form
-            this.Hide();
-            frmOutPut fop = new frmOutPut(this);
-            fop.ShowDialog();
-            this.Show();
+            try
+            {
+                
+
+                //Show Ouput in our own form
+                this.Hide();
+                frmOutPut fop = new frmOutPut(this);
+                fop.ShowDialog();
+                this.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

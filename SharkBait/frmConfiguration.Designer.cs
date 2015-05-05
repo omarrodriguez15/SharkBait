@@ -46,7 +46,7 @@
             // cbStrings
             // 
             this.cbStrings.AutoSize = true;
-            this.cbStrings.Location = new System.Drawing.Point(38, 304);
+            this.cbStrings.Location = new System.Drawing.Point(38, 185);
             this.cbStrings.Name = "cbStrings";
             this.cbStrings.Size = new System.Drawing.Size(74, 21);
             this.cbStrings.TabIndex = 0;
@@ -57,7 +57,7 @@
             // cbListDlls
             // 
             this.cbListDlls.AutoSize = true;
-            this.cbListDlls.Location = new System.Drawing.Point(38, 331);
+            this.cbListDlls.Location = new System.Drawing.Point(38, 212);
             this.cbListDlls.Name = "cbListDlls";
             this.cbListDlls.Size = new System.Drawing.Size(79, 21);
             this.cbListDlls.TabIndex = 1;
@@ -68,7 +68,7 @@
             // cbProcExp
             // 
             this.cbProcExp.AutoSize = true;
-            this.cbProcExp.Location = new System.Drawing.Point(38, 385);
+            this.cbProcExp.Location = new System.Drawing.Point(38, 266);
             this.cbProcExp.Name = "cbProcExp";
             this.cbProcExp.Size = new System.Drawing.Size(82, 21);
             this.cbProcExp.TabIndex = 3;
@@ -79,7 +79,7 @@
             // cbProcMon
             // 
             this.cbProcMon.AutoSize = true;
-            this.cbProcMon.Location = new System.Drawing.Point(38, 358);
+            this.cbProcMon.Location = new System.Drawing.Point(38, 239);
             this.cbProcMon.Name = "cbProcMon";
             this.cbProcMon.Size = new System.Drawing.Size(86, 21);
             this.cbProcMon.TabIndex = 2;
@@ -90,7 +90,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(291, 304);
+            this.checkBox1.Location = new System.Drawing.Point(291, 185);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(50, 21);
             this.checkBox1.TabIndex = 4;
@@ -101,7 +101,7 @@
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(291, 331);
+            this.checkBox2.Location = new System.Drawing.Point(291, 212);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(50, 21);
             this.checkBox2.TabIndex = 5;
@@ -112,7 +112,7 @@
             // checkBox3
             // 
             this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(291, 385);
+            this.checkBox3.Location = new System.Drawing.Point(291, 266);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(50, 21);
             this.checkBox3.TabIndex = 7;
@@ -123,7 +123,7 @@
             // checkBox4
             // 
             this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(291, 358);
+            this.checkBox4.Location = new System.Drawing.Point(291, 239);
             this.checkBox4.Name = "checkBox4";
             this.checkBox4.Size = new System.Drawing.Size(50, 21);
             this.checkBox4.TabIndex = 6;
@@ -143,7 +143,7 @@
             // 
             // btnChooseFile
             // 
-            this.btnChooseFile.Location = new System.Drawing.Point(292, 63);
+            this.btnChooseFile.Location = new System.Drawing.Point(287, 75);
             this.btnChooseFile.Name = "btnChooseFile";
             this.btnChooseFile.Size = new System.Drawing.Size(97, 23);
             this.btnChooseFile.TabIndex = 9;
@@ -154,7 +154,7 @@
             // lblFileName
             // 
             this.lblFileName.AutoSize = true;
-            this.lblFileName.Location = new System.Drawing.Point(30, 63);
+            this.lblFileName.Location = new System.Drawing.Point(25, 75);
             this.lblFileName.Name = "lblFileName";
             this.lblFileName.Size = new System.Drawing.Size(87, 17);
             this.lblFileName.TabIndex = 10;
@@ -166,7 +166,7 @@
             // 
             // btnGo
             // 
-            this.btnGo.Location = new System.Drawing.Point(291, 92);
+            this.btnGo.Location = new System.Drawing.Point(286, 104);
             this.btnGo.Name = "btnGo";
             this.btnGo.Size = new System.Drawing.Size(98, 23);
             this.btnGo.TabIndex = 11;
@@ -178,7 +178,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(647, 476);
+            this.ClientSize = new System.Drawing.Size(458, 352);
             this.Controls.Add(this.btnGo);
             this.Controls.Add(this.lblFileName);
             this.Controls.Add(this.btnChooseFile);

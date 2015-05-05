@@ -39,6 +39,7 @@
             this.tbSearchStrings.Name = "tbSearchStrings";
             this.tbSearchStrings.Size = new System.Drawing.Size(100, 22);
             this.tbSearchStrings.TabIndex = 5;
+            this.tbSearchStrings.TextChanged += new System.EventHandler(this.tbSearchStrings_TextChanged);
             // 
             // lblBox1
             // 
@@ -54,7 +55,7 @@
             this.lbOne.FormattingEnabled = true;
             this.lbOne.HorizontalScrollbar = true;
             this.lbOne.ItemHeight = 16;
-            this.lbOne.Location = new System.Drawing.Point(17, 30);
+            this.lbOne.Location = new System.Drawing.Point(21, 32);
             this.lbOne.Name = "lbOne";
             this.lbOne.Size = new System.Drawing.Size(417, 580);
             this.lbOne.TabIndex = 3;

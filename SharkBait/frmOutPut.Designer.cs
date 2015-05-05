@@ -29,51 +29,77 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.lbOne = new System.Windows.Forms.ListBox();
-            this.lblBox1 = new System.Windows.Forms.Label();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.lblSearchBox = new System.Windows.Forms.Label();
             this.tbSearchStrings = new System.Windows.Forms.TextBox();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabControl = new System.Windows.Forms.TabControl();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            this.tabControl.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lbOne
+            // lblSearchBox
             // 
-            this.lbOne.FormattingEnabled = true;
-            this.lbOne.HorizontalScrollbar = true;
-            this.lbOne.ItemHeight = 16;
-            this.lbOne.Location = new System.Drawing.Point(12, 55);
-            this.lbOne.Name = "lbOne";
-            this.lbOne.Size = new System.Drawing.Size(417, 580);
-            this.lbOne.TabIndex = 0;
-            // 
-            // lblBox1
-            // 
-            this.lblBox1.AutoSize = true;
-            this.lblBox1.Location = new System.Drawing.Point(13, 32);
-            this.lblBox1.Name = "lblBox1";
-            this.lblBox1.Size = new System.Drawing.Size(101, 17);
-            this.lblBox1.TabIndex = 1;
-            this.lblBox1.Text = "Search Strings";
+            this.lblSearchBox.AutoSize = true;
+            this.lblSearchBox.Location = new System.Drawing.Point(14, 32);
+            this.lblSearchBox.Name = "lblSearchBox";
+            this.lblSearchBox.Size = new System.Drawing.Size(101, 17);
+            this.lblSearchBox.TabIndex = 1;
+            this.lblSearchBox.Text = "Search Strings";
+            this.lblSearchBox.Visible = false;
             // 
             // tbSearchStrings
             // 
-            this.tbSearchStrings.Location = new System.Drawing.Point(120, 29);
+            this.tbSearchStrings.Location = new System.Drawing.Point(17, 54);
             this.tbSearchStrings.Name = "tbSearchStrings";
-            this.tbSearchStrings.Size = new System.Drawing.Size(100, 22);
+            this.tbSearchStrings.Size = new System.Drawing.Size(160, 22);
             this.tbSearchStrings.TabIndex = 2;
+            this.tbSearchStrings.Visible = false;
             this.tbSearchStrings.TextChanged += new System.EventHandler(this.tbSearchStrings_TextChanged);
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(719, 627);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(719, 627);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabControl
+            // 
+            this.tabControl.Controls.Add(this.tabPage1);
+            this.tabControl.Controls.Add(this.tabPage2);
+            this.tabControl.Location = new System.Drawing.Point(215, 29);
+            this.tabControl.Name = "tabControl";
+            this.tabControl.SelectedIndex = 0;
+            this.tabControl.Size = new System.Drawing.Size(727, 656);
+            this.tabControl.TabIndex = 3;
             // 
             // frmOutPut
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(831, 706);
+            this.ClientSize = new System.Drawing.Size(954, 697);
             this.Controls.Add(this.tbSearchStrings);
-            this.Controls.Add(this.lblBox1);
-            this.Controls.Add(this.lbOne);
+            this.Controls.Add(this.tabControl);
+            this.Controls.Add(this.lblSearchBox);
             this.Name = "frmOutPut";
             this.Text = "Output";
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            this.tabControl.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -81,9 +107,11 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox lbOne;
-        private System.Windows.Forms.Label lblBox1;
+        private System.Windows.Forms.Label lblSearchBox;
         private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.TextBox tbSearchStrings;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabControl tabControl;
     }
 }
